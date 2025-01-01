@@ -1,18 +1,29 @@
-pipeline {
+ pipeline {
     agent any
-
     stages {
-        stage('Build and Push Docker Image') {
+        stage('Checkout') {
             steps {
-                // Grant executable permissions to the build script
-                sh 'chmod +x deploy.sh'
-
-                // Build the Docker image using the build script
-                sh './deploy.sh'
-
-                
+                git branch: 'dev', url: 'https://github.com/vasavivodnala/devops-build.git'
             }
         }
-
+        stage('Build Docker Image') {
+            steps {
+                sh './build.sh'
+            }
+        }
+        stage('Push to Docker Hub') {
+            steps {
+                script {
+                    if (env.BRANCH_NAME == 'dev') {
+                        sh 'docker push vasavivodnala/dev:latest'
+                    } else if (env.BRANCH_NAME == 'master') {
+                        sh 'docker push vasavivodnala/prod:latest'
+                    }
+                }
+            }
+        }
     }
 }
+
+
+
