@@ -22,6 +22,14 @@
                 }
             }
         }
+ stage('Deploy') {
+            steps {
+                sh './deploy.sh'
+            }
+        }
+    }
+    triggers {
+        pollSCM('H/5 * * * *') // Auto-build on changes
     }
 }
 
