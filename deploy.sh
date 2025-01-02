@@ -7,7 +7,7 @@ if [[ $GIT_BRANCH == "origin/dev" ]]; then
     docker tag latest vasavivodnala/dev
     docker push vasavivodnala/dev
 
-elif [[ $GIT_BRANCH == "origin/main" ]]; then
+elif [[ $GIT_BRANCH == "origin/master" ]]; then
     sh 'chmod +x build.sh'
     sh './build.sh'
     docker login -u vasavivodnala -p Asviarha@2014
