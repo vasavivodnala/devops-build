@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t apping:latest.
+docker build -t appq .
