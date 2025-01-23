@@ -1,9 +1,9 @@
 ---
 version: '3'
 services:
-  apping:
-  image: vasavivodnala/apping:latest
-    ports:
+  app:
+  image: appq 
+  ports:
       - "80:80"
     restart: always
 ---
