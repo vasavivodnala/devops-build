@@ -1,10 +1,15 @@
  pipeline {
     agent any
+stage('Clone Repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/vasavivodnala/devops-build.git'
+            }
+        }
 
     stages {
         stage('Build and Push Docker Image') {
             steps {
-                sh 'echo hi'
+                
                 // Grant executable permissions to the build script
                 sh 'chmod +x deploy.sh'
 
