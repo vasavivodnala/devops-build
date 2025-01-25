@@ -1,5 +1,6 @@
  pipeline {
     agent any
+stages {
 stage('Clone Repository') {
             steps {
                 git branch: 'main', url: 'https://github.com/vasavivodnala/devops-build.git'
@@ -16,7 +17,7 @@ stage('Clone Repository') {
                 // Build the Docker image using the build script
                 sh './deploy.sh'
 
-                
+               } 
             }
         }
 
