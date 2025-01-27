@@ -1,13 +1,15 @@
 {
-  "name": "node-app",
+  "name": "application-deployment",
   "version": "1.0.0",
-  "description": "Application Deployment",
-  "main": "app.js",
+  "description": "A Node.js app served on port 80",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "start": "node server.js"
   },
+  "keywords": ["nodejs", "docker", "application deployment"],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   }
 }
