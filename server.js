@@ -1,11 +1,13 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const port = process.env.PORT || 80;
 
-app.get('/capstone', (req, res) => {
-  res.send('capstone, Appliction deployment .\n');
+// Use port 80 for HTTP
+const PORT = 80;
+
+app.get("/", (req, res) => {
+  res.send("Application Deployment");
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
