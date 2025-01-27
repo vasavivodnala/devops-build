@@ -1,20 +1,20 @@
-# Use an official alpine nodeJS image as the base image
-FROM node:alpine
+# Use the official Node.js 18 image with Alpine
+FROM node:18-alpine
 
-# Set working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the container
-COPY package*.json ./
+# Copy package.json and package-lock.json (if available)
+COPY package.json .
 
-# Install only production nodeJS dependencies in Docker Image
-RUN npm install --only=production
+# Install dependencies
+RUN npm install
 
-# Copy the rest of the application code into the container
+# Copy the rest of the application code
 COPY . .
 
-# Expose the app on a port
+# Expose port 80 for the application
 EXPOSE 80
 
-# Command that runs the app
-CMD ["npm", "start"]
+# Start the application
+CMD ["node", "server.js"]
