@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 
-app.get('/hello', (req, res) => {
-  res.send('Hello, World! Welcome to iQuant YouTube Channel.\n');
+app.get('/capstone', (req, res) => {
+  res.send('capstone, Appliction deployment .\n');
 });
 
 app.listen(port, () => {
