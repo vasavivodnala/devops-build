@@ -1,5 +1,5 @@
 # Use an official alpine nodeJS image as the base image
-FROM node:alpine
+FROM node18:alpine
 
 # Set working directory in the container
 WORKDIR /app
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 80
 
 # Command that runs the app
-CMD ["npm", "start"]
+CMD ["npm","run", "start"]
