@@ -1,9 +1,12 @@
----
-version: '3'
+version: "3.9" # Specify the Docker Compose file format version
+
 services:
   app:
-  image: appq 
-  ports:
-      - "80:80"
-    restart: always
----
+    image: application-deployment:latest # The image to use (built locally)
+    build:
+      context: . # Use the current directory for the Dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - "80:80" # Map host port 80 to container port 80
+    container_name: node-app # Optional: Name the container
+    restart: always # Restart the container if it stops
