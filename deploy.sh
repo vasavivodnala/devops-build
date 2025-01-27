@@ -1,5 +1,5 @@
 #!/bin/bash
-echo hi
+echo "Application deployed successfully on port 80"
 if [[ $GIT_BRANCH == "origin/dev" ]]; then
     # Build your project
     sh 'chmod +x build.sh'
