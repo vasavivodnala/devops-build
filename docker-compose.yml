@@ -1,12 +1,9 @@
-version: "3.9" # Specify the Docker Compose file format version
 
+---
+version: '3'
 services:
-  app:
-    image: application-deployment:latest # The image to use (built locally)
-    build:
-      context: . # Use the current directory for the Dockerfile
-      dockerfile: Dockerfile
-    ports:
-      - "80:80" # Map host port 80 to container port 80
-    container_name: node-app # Optional: Name the container
-    restart: always # Restart the container if it stops
+react-capstone:
+image: "react-capstone"
+ports:
+- "80:80"
+---
