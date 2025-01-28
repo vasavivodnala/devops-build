@@ -1,2 +1,3 @@
 #!/bin/bash
-docker build -t appq .
+docker build -t project .
+echo "Docker image vasavivodnala/projcet built successfully"
