@@ -1,4 +1,4 @@
 #!/bin/bash
-docker build -t vasavivodnala/application-deployment .
-echo "Docker image vasavivodnala/application-deployment built successfully"
+docker build -t project .
+echo "Docker image vasavivodnala/projcet built successfully"
 
