@@ -5,13 +5,14 @@ if [[ $GIT_BRANCH == "origin/dev" ]]; then
     sh 'chmod +x build.sh'
     sh './build.sh'
     docker login -u vasavivodnala -p Asviarha@2014
-    docker tag application-deployment vasavivodnala/dev
-    docker push vasavivodnala/dev
+    docker tag project vasavivodnala/dev:latest
+    docker push vasavivodnala/dev:latest
 
 elif [[ $GIT_BRANCH == "origin/main" ]]; then
     sh 'chmod +x build.sh'
     sh './build.sh'
     docker login -u vasavivodnala -p Asviarha@2014
-    docker tag application-deployment vasavivodnala/prod
-    docker push vasavivodnala/prod
+    docker tag project vasavivodnala/prod:latest
+    docker push vasavivodnala/prod:latest
 fi
+~
