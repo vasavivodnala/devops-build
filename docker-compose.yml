@@ -2,8 +2,9 @@
 ---
 version: '3'
 services:
-react-capstone:
-image: "react-capstone"
-ports:
-- "80:80"
+  app:
+  image: project
+  ports:
+      - "80:80"
+    restart: always
 ---
